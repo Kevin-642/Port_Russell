@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Réservations</title>
+</head>
+<body>
+    <h1>Liste des Réservations</h1>
+
+    <% if (reservation.length > 0) { %> 
+        <ul>
+            <% reservation.forEach(reservation => { %> 
+                <li>
+                        <p><strong>ID:</strong> <%= reservation._id %></p>
+                        <p><strong>Réservation du Catway:</strong> <%= reservation.catwayNumber %></p>
+                        <p><strong>Nom du client:</strong> <%= reservation.clientName %></p>
+                        <p><strong>Nom du bateau:</strong> <%= reservation.boatName %></p>
+                        <p><strong>Début réservation:</strong> <%= reservation.checkIn.toDateString() %></p>
+                        <p><strong>Fin réservation:</strong> <%= reservation.checkOut.toDateString() %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Aucune réservation trouvée.</p>
+    <% } %>
+
+    <a href="/">Retour au tableau de bord</a>
+</body>
+</html>

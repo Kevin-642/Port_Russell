@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Catways</title>
+</head>
+<body>
+    <h1>Liste des Catways</h1>
+
+    <% if (catways.length > 0) { %>
+        <ul>
+            <% catways.forEach(catways => { %>
+                <li>
+                        <p><strong>ID:</strong> <%= catways._id %></p> 
+                        <p><strong>Catway:</strong> <%= catways.catwayNumber %></p>
+                        <p><strong>Type:</strong> <%= catways.type %></p>
+                        <p><strong>État:</strong> <%= catways.catwayState %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>Aucun catway trouvé.</p>
+    <% } %>
+
+    <a href="/">Retour au tableau de bord</a>
+</body>
+</html>

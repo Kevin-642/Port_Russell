@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'utilisateur</title>
+</head>
+<body>
+    <h1>Détails de l'Utilisateur</h1>
+
+    <% if (user) { %>
+        <p><strong>ID :</strong> <%= user._id %></p>
+        <p><strong>Nom d'utilisateur :</strong> <%= user.name %></p>
+        <p><strong>Email :</strong> <%= user.email %></p>
+    <% } else { %>
+        <p>Utilisateur non trouvé.</p>
+    <% } %>
+
+    <a href="/users/list">Retour à la liste des Utilisateurs</a>
+</body>
+</html>

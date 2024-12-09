@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    
+    <h2>Gestion des utilisateurs</h2>
+    <form action="/users/create" method="POST">
+        <input type="text" name="name" placeholder="Nom d'utilisateur" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit">Créer un utilisateur</button>
+    </form>
+    <form action="/users/update?_method=PATCH" method="POST">
+        <input type="text" name="userId" placeholder="ID de l'utilisateur" required>
+        <input type="text" name="newName" placeholder="Nouveau nom d'utilisateur">
+        <input type="password" name="newPassword" placeholder="Nouveau mot de passe">
+        <button type="submit">Modifier un utilisateur</button>
+    </form>
+    <form action="/users/delete?_method=DELETE" method="POST">
+        <input type="text" name="userId" placeholder="ID de l'utilisateur" required>
+        <button type="submit">Supprimer un utilisateur</button>
+    </form>
+
+    <h2>Gestion des Catways</h2>
+    <form action="/catways/create" method="POST">
+        <input type="text" name="name" placeholder="Nom du Catway" required>
+        <input type="text" name="catwayState" placeholder="État du Catway" required>
+        <input type="text" name="type" placeholder="Type de Catway (long/short)" required>
+        <input type="number" name="catwayNumber" placeholder="Numéro du Catway" required>
+        <button type="submit">Créer un Catway</button>
+    </form>
+    <form action="/catways/update?_method=PATCH" method="POST">
+        <input type="hidden" name="_method" value="PATCH">
+        <input type="text" name="catwayId" placeholder="ID du Catway" required>
+        <input type="text" name="newDescription" placeholder="Nouvelle description">
+        <button type="submit">Modifier le Catway</button>
+    </form>
+    <form action="/catways/delete?_method=DELETE" method="POST">
+        <input type="text" name="catwayId" placeholder="ID du Catway" required>
+        <button type="submit">Supprimer le Catway</button>
+    </form>
+    <form action="/catways/details" method="GET">
+        <input type="text" name="catwayId" placeholder="ID du Catway" required>
+        <button type="submit">Afficher les détails du Catway</button>
+    </form>
+
+    <h2>Gestion des Réservations</h2>
+    <form action="/reservations/create" method="POST">
+        <input type="text" name="catwayNumber" placeholder="Nombre du Catway" required>
+        <input type="text" name="clientName" placeholder="Nom du client" required>
+        <input type="text" name="boatName" placeholder="Nom du bateau" required>
+        <input type="date" name="checkIn" required>
+        <input type="date" name="checkOut" required>
+        <button type="submit">Enregistrer une réservation</button>
+    </form>
+    <form action="/reservations/delete?_method=DELETE" method="POST">
+        <input type="text" name="reservationId" placeholder="ID de la réservation" required>
+        <button type="submit">Supprimer une réservation</button>
+    </form>
+    <form action="/reservations/details" method="GET">
+        <input type="text" name="reservationId" placeholder="ID de la réservation" required>
+        <button type="submit">Afficher les détails de la réservation</button>
+    </form>
+
+    <h3>Liens</h3>
+    <a href="/catways/list">Liste des Catways</a><br>
+    <a href="/reservations/list">Liste des Réservations</a><br>
+    <a href="/users/list">Liste des clients</a><br>
+
+    <a href="/docs/index.html">Voir la documentation de l'API</a>
+</body>
+
+</html>
