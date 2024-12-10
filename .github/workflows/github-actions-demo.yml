@@ -1,0 +1,18 @@
+Nom: GitHub Actions Demo
+le nom de la course d'eau: github.actor est en train de tester GitHub Actions
+sur : [pousser)
+emplois:
+  Explorer les actions de GitHub:
+    S'enclencher: ubuntu-latest
+    étapes:
+      - lancer: écho: " - Le travail a été automatiquement déclenché par un événement - github.event.
+      - run: echo "- cet emploi est maintenant en cours d'exécution sur un serveur de runner.os - hébergé par GitHub"
+      Le nom de votre branche est github.ref et votre dépôt est - github.repository - ".
+      - nom : Vérifiez le code du dépôt
+        utilise: actions/checkout-v4
+      - run: echo "---------------------------------------------------------------------------
+      Le flux de travail est maintenant prêt à tester votre code sur le coureur. "
+      - nom : Liste des fichiers dans le répertoire
+        Courir:
+          ls - github.espace de travail
+      - courir: écho: " - Le statut de cet emploi est - job.status -."
